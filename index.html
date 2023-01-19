@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='module' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js'></script>
+    <script nomodule='' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js'></script><link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <title>V2</title>
+    <!-- Pre Loader style -->
+    <style>
+      body{
+          background: black;
+      }
+      .loader{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top:250px ;
+          animation: loader 2.3s infinite;
+      }
+      .body{
+          width: 150px;
+          height: 170px;
+          background-color: aliceblue;
+          border-radius: 20px 20px 70px 80px;
+          display: flex;
+          gap: 20px;
+      }
+      .eyes{
+          width: 33px;
+          height: 33px;
+          background-color: rgb(0, 0, 0);
+          left: 35px;
+          top: 40px;   
+          position: relative;
+          border-radius: 15px;
+          display: flex;
+      }
+      .eyeball{
+          width: 10px;
+          height: 10px;
+          background-color: aliceblue;
+          position: relative;
+          left: 10px;
+          top: 10px;
+          border-radius: 5px;
+          animation: eyeanimation 2.2s infinite;
+      }
+      @keyframes eyeanimation {
+          0%{top:10px ;left: 10px;}
+          25%{top:10px ;left: 10px;}
+          50%{top:17px ;left: 5px;}
+          75%{top:17px ;left: 20px}
+          100%{top:10px ;left: 10px;}
+      }
+      @keyframes loader {
+        0%{margin-top:250px;}
+        50%{margin-top: 200px;}
+        100%{margin-top: 250px;}
+      }
+      .dot{
+          display: flex;
+          flex-direction: column;
+          margin-top: 200px;
+      }
+      .dots{
+          width: 20px;
+          height: 20px;
+          background-color: aliceblue;
+      }
+  </style>
+</head>
+<body  onload="myFunction()" style="margin:0;">
+  <!-- Pre loader code -->
+<div id="loadermain">
+  <div class="loader">
+    <div class="body">
+        <div class="eyes" id="eye1">
+            <div class="eyeball"></div>
+        </div>
+    <div class="eyes" id="eye2">
+        <div class="eyeball"></div>
+    </div>
+    </div>
+</div>
+</div>
+<!-- Pre loader code end -->
+<div id="main" style="display: none;">
+
+  <h1 id="welcome">Your Mood Today ?</h1>
+  <iframe src="" frameborder="0" id="frame" style="display: none;" ></iframe>
+  
+  <div class="bottom-nav">
+  
+      <input type="radio" name="radio" value="2" id="tab-2" checked/>
+      <label class="icon cart" for="tab-2">
+          <ion-icon name="happy"></ion-icon>
+          <ion-icon name="happy" class="fill"></ion-icon>
+      </label>
+      
+      <input type="radio" name="radio" value="3" id="tab-3" />
+      <label class="icon fav" for="tab-3">
+          <ion-icon name="flame"></ion-icon>
+        <ion-icon class="fill" name="flame"></ion-icon>
+      </label>
+      
+      <input type="radio" name="radio" value="4" id="tab-4" />
+      <label class="icon profile" for="tab-4">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <ion-icon class="fill" name="checkmark-circle"></ion-icon>
+      </label>
+  
+      <input type="radio" name="radio" value="5" id="tab-5" />
+      <label class="icon profile" for="tab-5">
+        <ion-icon name="skull-outline"></ion-icon>
+        <ion-icon class="fill" name="skull-outline"></ion-icon>
+      </label>
+    </div>
+</div>
+
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
+  <script>
+  
+
+    $('label').on("click",function() {
+  $index = $(this).prevAll().length;
+  
+  if($index === 1) {
+    document.getElementById('frame').src="includes/meme.php";
+    document.getElementById('frame').style.display="inline-block"
+   document.getElementById('welcome').style.display="none";
+
+$(fetchContent);
+  } else if($index === 3) {
+    document.getElementById('frame').src="includes/jokes.php";
+    document.getElementById('frame').style.display="inline-block"
+   document.getElementById('welcome').style.display="none";
+  
+  } else if($index === 5) {
+    document.getElementById('frame').src="includes/tasks.php";
+    document.getElementById('frame').style.display="inline-block"
+   document.getElementById('welcome').style.display="none";
+  }
+  else if($index === 7) {
+    document.getElementById('frame').src="includes/roast.php";
+    document.getElementById('frame').style.display="inline-block"
+   document.getElementById('welcome').style.display="none";
+  }
+});
+
+</script>
+<!-- Pre Loader Script -->
+<script>
+  var myVar;
+        
+        function myFunction() {
+          myVar = setTimeout(showPage, 5000);
+        }
+        
+        function showPage() {
+          document.getElementById("loadermain").style.display = "none";
+          document.getElementById("main").style.display = "block";
+        }
+</script>
+</body>
+</html>

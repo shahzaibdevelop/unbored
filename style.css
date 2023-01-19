@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); 
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    overflow-y: scroll;
+  }
+  
+  .bottom-nav {
+    background: #313131;
+    width: 100%;
+    height: 8rem;
+    box-shadow: 0 0.4rem 1rem 0 rgba(55, 55, 55, 0.2);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+  }
+  .bottom-nav input {
+    display: none;
+  }
+  .bottom-nav label {
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #7e848c;
+    z-index: 200;
+    position: relative;
+  }
+  .bottom-nav label::before {
+    content: "";
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .bottom-nav ion-icon {
+    font-size: 3.5rem;
+    color: inherit;
+  }
+  .bottom-nav input:checked + .home {
+    color: #952e50;
+  }
+  .bottom-nav input:checked + .home > ion-icon:first-child {
+    opacity: 0;
+  }
+  .bottom-nav input:checked + .home::before {
+    background: #98556c;
+    transform: scale(0.8);
+  }
+  .bottom-nav input:checked + .cart {
+    color: #363e4b;
+  }
+  .bottom-nav input:checked + .cart > ion-icon:first-child {
+    opacity: 0;
+  }
+  .bottom-nav input:checked + .cart::before {
+    background: #98acbd;
+    transform: scale(0.8);
+  }
+  .bottom-nav input:checked + .fav {
+    color: #363e4b;
+
+  }
+  .bottom-nav input:checked + .fav > ion-icon:first-child {
+    opacity: 0;
+  }
+  .bottom-nav input:checked + .fav::before {
+    background: #98acbd;
+    transform: scale(0.8);
+  }
+  .bottom-nav input:checked + .profile {
+    color: #363e4b;
+  }
+  .bottom-nav input:checked + .profile > ion-icon:first-child {
+    opacity: 0;
+  }
+  .bottom-nav input:checked + .profile::before {
+    background: #98acbd;
+    transform: scale(0.8);
+  }
+  .bottom-nav input:checked + label .fill {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  
+  .fill {
+    position: absolute;
+    left: 0.8rem;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  body {
+    overflow: hidden; 
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    background: #000000;
+  }
+  body::-webkit-scrollbar{
+    display: none;
+   
+  }
+  #frame{
+   
+    height: 85vh;
+   width: 100%;
+     margin: 1% auto;
+   }
+   #welcome {
+    color: aliceblue;
+    font-family: 'Dancing Script', cursive;
+font-size: 8vw;
+text-align: center;
+
+margin-top: 280px;
+   }
